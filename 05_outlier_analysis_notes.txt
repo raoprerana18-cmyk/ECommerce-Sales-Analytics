@@ -1,0 +1,22 @@
+# Outlier Analysis – Findings
+
+**Project:** E-Commerce Sales, Customer Churn & Supply Chain Analytics Dashboard
+
+## Method
+The Interquartile Range (IQR) method was used to identify potential outliers.
+
+## Key Findings
+1. Orders: 773 potential outliers in order_total_usd.
+2. Delivery days: No potential outliers.
+3. Order item quantity: 931 potential outliers.
+4. Line total: 2,671 potential outliers.
+5. Line profit: 1,979 potential outliers.
+6. Product list price: 33 potential outliers.
+7. Product unit cost: 42 potential outliers.
+8. Product weight: No potential outliers.
+
+## Investigation
+The 10 highest orders were inspected. They represent high-value, multi-item orders across different countries. All 10 were marked as Delivered.
+
+## Conclusion
+Potential outliers were retained because they may represent genuine business transactions. No values were deleted or modified solely because they exceeded the IQR limits.

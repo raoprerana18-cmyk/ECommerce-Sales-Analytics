@@ -1,0 +1,42 @@
+# Data Quality Checks – Final Findings
+
+**Project:** E-Commerce Sales, Customer Churn & Supply Chain Analytics Dashboard
+
+## 1. Basic Validation
+- No zero or negative order totals found.
+- No zero or negative exchange rates found.
+- No negative item counts found.
+- No zero or negative quantities found.
+- No negative line totals found.
+- No invalid product prices, costs or weights found.
+
+## 2. Negative Profit Investigation
+- 484 order-item records have negative profit.
+- These records were retained because they may represent genuine loss-making transactions.
+
+## 3. Profit Calculation Validation
+
+The verified formula is:
+
+Profit = Line Revenue − (Unit Cost × Quantity)
+
+- Total records checked: 29,671.
+- Records matching within $0.01 tolerance: 29,671.
+- Records differing by $0.01: 2.
+
+The two small differences may be related to rounding. Their original values were retained.
+
+## 4. Conclusion
+
+The datasets passed the initial data quality checks. The profit calculation was validated within a $0.01 tolerance. No original data was deleted or modified during this investigation.
+### Profit Calculation Validation
+
+During data quality validation, the initial profit calculation was found to be inconsistent because it did not account for item quantity.
+
+After testing an alternative formula, the following calculation matched 29,669 of the 29,671 order-item records within a tolerance of $0.01:
+
+**Profit = Line Revenue − (Unit Cost × Quantity)**
+
+Only two records exceeded the tolerance and require further investigation.
+
+The original profit values have been retained without modification.
